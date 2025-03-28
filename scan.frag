@@ -34,16 +34,6 @@ float addRadii2(vec2 uv) {
     return r;
 }
 
-float addRadii(vec2 uv) {
-    vec2 polarUv = toPolar(uv);
-    float theta = polarUv.y; // [0, 2.0 * pi]
-    float d = 90.0;
-    float alpha = d * oneDegreeInRadian;
-    float edge = floor(theta/alpha);
-    
-    return mod(edge, 2.0) == 0.0 ? 0.0 : 1.0;
-}
-
 float addCircles(vec2 uv) {
     float diff = length(uv);
 	float scale = 5.0;
